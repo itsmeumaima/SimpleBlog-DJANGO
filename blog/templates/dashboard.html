@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style_dashboard.css' %}">
+</head>
+
+</body>
+
+<div class="blog-container">
+        <header>
+            <div class="header-content">
+                <div class="logo">BlogDash</div>
+                <nav class="nav-links">
+                    <a href="/">Dashboard</a>
+                    <a href="#" class="active">Blog Posts</a>
+                    <a href="#">Create New</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <h1 class="page-title">All Blog Posts</h1>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                 {% for post in posts %}
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('{{ post.image.url }}');"></div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">{{ post.title }}</h2>
+                        <div class="blog-date">{{ post.created_at }}</div>
+                        <p class="blog-text">{{ post.content|truncatewords:20 }}</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                
+                {% endfor %}
+            
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 BlogDash. All rights reserved.</p>
+        </footer>
+    </div>
+</body>

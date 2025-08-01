@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="header-content">
+                <div class="logo">BlogDash</div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="welcome-card">
+                <h1 class="welcome-title">Welcome to Your Blog Dashboard</h1>
+                <p class="welcome-description">
+                    Ready to start creating amazing content? Click the button below to begin your blogging journey.
+                </p>
+                <button class="get-started-btn"><a href="{% url 'dashboard' %}">Get Started</a></button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 BlogDash. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
