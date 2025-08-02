@@ -15,9 +15,9 @@
             <div class="header-content">
                 <div class="logo">BlogDash</div>
                 <nav class="nav-links">
-                    <a href="/">Dashboard</a>
+                    <a href="{% url 'index' %}">Home</a>
                     <a href="#" class="active">Blog Posts</a>
-                    <a href="#">Create New</a>
+                    <a href="{% url 'create_post' %}">Create New</a>
                 </nav>
             </div>
         </header>
@@ -34,7 +34,7 @@
                         <h2 class="blog-title">{{ post.title }}</h2>
                         <div class="blog-date">{{ post.created_at }}</div>
                         <p class="blog-text">{{ post.content|truncatewords:20 }}</p>
-                        <a href="#" class="read-more">Read More</a>
+                        <a href="{% url 'view_post' post.id %}" class="read-more">Read More</a>
                     </div>
                 </article>
                 
